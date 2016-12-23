@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+html{
+  font: #{$font-size-sm}/1 Arial, sans-serif;
+}
+
+body{
+  padding: 20px 10px 0;
+  background: $grey;
+  color: $grey-darker;
+}
+
+a,
+a:link,
+a:visited,
+a:focus{
+  text-decoration: none;
+  color: $grey-darker;
+}

@@ -4,14 +4,42 @@
 @import "includes/reset";
 
 /**
+ * Settings
+ */
+@import "includes/settings/vars";
+
+/**
+ * Tools
+ */
+@import "includes/tools/mixins";
+@import "includes/tools/animations";
+
+/**
  * Base
  */
-@import "includes/base/vars";
 @import "includes/base/fonts";
 @import "includes/base/base";
 
 /**
- * Project
+ * Components
  */
-@import "includes/project/animations";
+@import "includes/components/wrapper";
+@import "includes/components/goods";
+@import "includes/components/button";
+@import "includes/components/details-card";
+
+/**
+ * Utils
+ */
+@import "includes/utils/font-weight";
+@import "includes/utils/font-size";
+@import "includes/utils/font-color";
+@import "includes/utils/display";
+@import "includes/utils/grid";
+@import "includes/utils/align";
+@import "includes/utils/box-shadow";
+@import "includes/utils/bg-images";
+@import "includes/utils/text-align";
+@import "includes/utils/background";
+@import "includes/utils/padding-title";
 

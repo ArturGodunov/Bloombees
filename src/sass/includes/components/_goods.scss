@@ -1,0 +1,63 @@
+.c-goods{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 #{-$gutter/2};
+}
+
+.c-goods-item{
+  display: flex;
+  flex-direction: column;
+  width: calc(25% - #{$gutter});
+  border-radius: $border-radius;
+  background: $white;
+  margin: 0 $gutter/2 $gutter;
+}
+
+.c-goods-link{
+  padding-top: 100%;
+  position: relative;
+}
+
+.c-goods-link-hover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius $border-radius 0 0;
+  opacity: 0.8;
+
+  .c-goods-item:hover & {
+    background: $black;
+  }
+}
+
+.c-goods-link-hover-text{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  padding: 10px 30px;
+  border: 2px solid $white;
+  border-radius: 36px;
+  color: $white;
+  font-size: $font-size-m;
+  text-align: center;
+
+  .c-goods-item:hover & {
+    display: block;
+  }
+
+  &:hover{
+    background: $white;
+    color: $grey-darker;
+    border: none;
+  }
+}
+
+.c-goods-sign{
+  padding: 10px 10px 5px;
+  line-height: 1.5;
+}

@@ -1,0 +1,7 @@
+$values: block, inline-block, inline;
+
+@each $i in $values {
+  .u-display--#{$i}{
+    display: $i;
+  }
+}

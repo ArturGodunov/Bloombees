@@ -27,6 +27,14 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
+			html: {
+                files: [
+                    'dist/index.html'
+                ],
+                options: {
+                    spawn: false
+                }
+			},
 			css: {
 				files: [
                     'src/sass/**/*.scss'

@@ -1,0 +1,9 @@
+$values: contain, cover;
+
+@each $i in $values {
+  .u-bg-images--#{$i}{
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: $i;
+  }
+}

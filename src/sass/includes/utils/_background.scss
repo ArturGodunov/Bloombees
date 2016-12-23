@@ -1,0 +1,7 @@
+$values: ($white:white, $black:black, $grey:grey, $grey-lighter:grey-lighter, $grey-darker:grey-darker);
+
+@each $key, $i in $values {
+    .u-background--#{$i}{
+        background-color: $key;
+    }
+}

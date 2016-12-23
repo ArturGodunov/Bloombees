@@ -1,0 +1,23 @@
+@mixin hover_pseudo_border($color) {
+  transition: .3s;
+  position: relative;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    height: 1px;
+    width: 0;
+    background: $color;
+    transition: .3s;
+  }
+  &.active,
+  &:hover{
+    color: $color;
+    &:before {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

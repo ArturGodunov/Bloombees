@@ -1,0 +1,7 @@
+$values: bold, normal;
+
+@each $i in $values {
+  .u-font-weight--#{$i}{
+    font-weight: $i;
+  }
+}

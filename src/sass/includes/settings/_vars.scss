@@ -1,0 +1,28 @@
+/* Gutters */
+$gutter: 20px;
+
+/* Border radius */
+$border-radius: 3px;
+
+/* Font sizes */
+$font-size-sm: 13px !default;
+$font-size-m: 14px !default;
+$font-size-l: 16px !default;
+$font-size-xl: 24px !default;
+$font-size-xxl: 26px !default;
+$font-size-3xl: 28px !default;
+
+/* Colors */
+$white: #fff;
+$black: #000;
+
+$grey: #f9f9fb;
+$grey-lightest: #ededed;
+$grey-lighter: #939393;
+$grey-darker: #333;
+
+/* Media */
+$screen-medium: 960px;
+
+/* Box shadow */
+$box-shadow: 0 1px 2px 0 transparentize($black, 0.75);
