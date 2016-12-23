@@ -1,0 +1,180 @@
+/**
+ * Reset
+ */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Base
+ */
+@font-face {
+  font-family: 'dosis_bold';
+  src: url("fonts/dosis-bold-webfont.eot");
+  src: url("fonts/dosis-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/dosis-bold-webfont.woff2") format("woff2"), url("fonts/dosis-bold-webfont.woff") format("woff"), url("fonts/dosis-bold-webfont.ttf") format("truetype"), url("fonts/dosis-bold-webfont.svg#dosis_bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * Project
+ */
+/*
+** ANIMATIONS
+*/
+@-webkit-keyframes fadeInMainSliderTextBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInMainSliderTextBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOutMainSliderTextBlock {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutMainSliderTextBlock {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeInPanel {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInPanel {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes nextSlideControler {
+  0% {
+    opacity: 0;
+    top: 10px;
+    left: 10px;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    top: 40px;
+    left: 40px;
+  }
+}
+@keyframes nextSlideControler {
+  0% {
+    opacity: 0;
+    top: 10px;
+    left: 10px;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    top: 40px;
+    left: 40px;
+  }
+}
+@-webkit-keyframes fadeInChess {
+  0% {
+    opacity: 0;
+    top: -10px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes fadeInChess {
+  0% {
+    opacity: 0;
+    top: -10px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+/*
+** END ANIMATIONS
+*/

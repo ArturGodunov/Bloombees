@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 					sourcemap: 'none'
 				},
 				files: {
-					'dist/ereader-styles/styles.css': 'src/sass/layout.scss'
+					'dist/styles/styles.css': 'src/sass/layout.scss'
 				}
 			}
 		},
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 			},
 			dist:{
 				files:{
-					'dist/ereader-styles/styles.css': 'dist/ereader-styles/styles.css'
+					'dist/styles/styles.css': 'dist/styles/styles.css'
 				}
 			}
 		},
