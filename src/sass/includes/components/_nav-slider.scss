@@ -1,0 +1,23 @@
+.c-nav-slider{
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.c-nav-slider-item{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $grey-lighter;
+  margin: 0 4px;
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover,
+  &.active{
+    background: $grey-darker;
+    box-shadow: 0 0 0 2px $grey-darker;
+  }
+}

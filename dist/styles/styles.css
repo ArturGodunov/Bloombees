@@ -313,6 +313,7 @@ a:focus {
 }
 
 .c-details-card-img {
+  position: relative;
   width: 66%;
   padding-top: 66%;
 }
@@ -335,6 +336,58 @@ a:focus {
 @media (max-width: 768px) {
   .c-details-card-desc {
     width: 100%;
+  }
+}
+
+.c-nav-slider {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-nav-slider-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #939393;
+  margin: 0 4px;
+  transition: .3s;
+  cursor: pointer;
+}
+.c-nav-slider-item:hover, .c-nav-slider-item.active {
+  background: #333;
+  box-shadow: 0 0 0 2px #333;
+}
+
+.c-nav-img-slider {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+
+.c-nav-img-slider-item {
+  width: 94px;
+  height: 94px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s;
+}
+.c-nav-img-slider-item + .c-nav-img-slider-item {
+  margin-left: 15px;
+}
+.c-nav-img-slider-item:hover, .c-nav-img-slider-item.active {
+  opacity: 0.6;
+}
+@media (max-width: 480px) {
+  .c-nav-img-slider-item {
+    display: none;
   }
 }
 

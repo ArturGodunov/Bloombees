@@ -13,6 +13,11 @@
     "name": "T Shirt2",
     "img": "qwe.jpg",
     "img2": "qwe2.jpg",
+    "img3": [
+      "qwe2.jpg",
+      "qwe3.jpg",
+      "qwe4.jpg"
+    ],
     "costEU": "22,00 €",
     "costBR": "4400 000,00 BYR",
     "desc": "QwePrinted chiffon knee length dress with tank straps. Deep v-neckline."

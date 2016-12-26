@@ -1,0 +1,25 @@
+.c-nav-img-slider{
+  display: flex;
+  margin-top: 15px;
+}
+
+.c-nav-img-slider-item{
+  width: 94px;
+  height: 94px;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: .3s;
+
+  & + .c-nav-img-slider-item{
+    margin-left: 15px;
+  }
+
+  &:hover,
+  &.active{
+    opacity: 0.6;
+  }
+
+  @media (max-width: $screen-tablet) {
+    display: none;
+  }
+}
