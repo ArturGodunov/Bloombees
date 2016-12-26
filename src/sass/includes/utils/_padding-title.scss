@@ -1,8 +1,0 @@
-$values: (m:1em);
-
-@each $key, $i in $values {
-  .u-padding-title--#{$key}{
-    padding-top: $i;
-    padding-bottom: $i;
-  }
-}

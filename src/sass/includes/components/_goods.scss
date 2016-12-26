@@ -11,6 +11,14 @@
   border-radius: $border-radius;
   background: $white;
   margin: 0 $gutter/2 $gutter;
+
+  @media (max-width: $screen-small) {
+    width: calc(50% - #{$gutter});
+  }
+
+  @media (max-width: $screen-tablet) {
+    width: 100%;
+  }
 }
 
 .c-goods-link{
@@ -38,7 +46,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 75%;
   padding: 10px 30px;
   border: 2px solid $white;
   border-radius: 36px;
@@ -47,7 +54,7 @@
   text-align: center;
 
   .c-goods-item:hover & {
-    display: block;
+    display: inline-block;
   }
 
   &:hover{

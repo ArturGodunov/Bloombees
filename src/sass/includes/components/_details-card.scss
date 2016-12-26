@@ -3,6 +3,24 @@
 }
 
 .c-details-card-img{
+  width: 66%;
   padding-top: 66%;
-  border-right: 1px solid $grey-lightest;
+
+  @media (min-width: $screen-small + 1) {
+    border-right: 1px solid $grey-lightest;
+  }
+
+  @media (max-width: $screen-small) {
+    width: 100%;
+    border-bottom: 1px solid $grey-lightest;
+  }
+}
+
+.c-details-card-desc{
+  width: 34%;
+  padding: 20px 30px 30px;
+
+  @media (max-width: $screen-small) {
+    width: 100%;
+  }
 }

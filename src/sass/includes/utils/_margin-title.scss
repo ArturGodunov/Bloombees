@@ -1,0 +1,8 @@
+$values: (m:1em, sm:0.5em);
+
+@each $key, $i in $values {
+  .u-margin-title--#{$key}{
+    margin-top: $i;
+    margin-bottom: $i;
+  }
+}
