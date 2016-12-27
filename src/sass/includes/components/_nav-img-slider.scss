@@ -1,11 +1,11 @@
 .c-nav-img-slider{
   display: flex;
-  margin-top: 15px;
 }
 
 .c-nav-img-slider-item{
   width: 94px;
   height: 94px;
+  margin-top: 15px;
   border-radius: $border-radius;
   cursor: pointer;
   transition: .3s;

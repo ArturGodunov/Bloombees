@@ -420,12 +420,12 @@ a:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 15px;
 }
 
 .c-nav-img-slider-item {
   width: 94px;
   height: 94px;
+  margin-top: 15px;
   border-radius: 3px;
   cursor: pointer;
   transition: .3s;
@@ -537,6 +537,10 @@ a:focus {
 
 .u-display--inline {
   display: inline;
+}
+
+.u-display--none {
+  display: none;
 }
 
 .u-align--container {

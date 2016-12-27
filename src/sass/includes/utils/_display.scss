@@ -1,4 +1,4 @@
-$values: block, inline-block, inline;
+$values: block, inline-block, inline, none;
 
 @each $i in $values {
   .u-display--#{$i}{

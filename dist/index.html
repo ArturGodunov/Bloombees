@@ -8,11 +8,51 @@
     </head>
     <body>
         <article class="c-wrapper">
-            <section class="c-details-card" id="detailsCard"></section>
+            <section class="c-details-card u-display--none" id="detailsCardResource">
+                <header class="c-details-card-header">
+                    <h2 class="u-margin-title--m u-font-size--3xl u-align--center" id="detailsCardTitle">%detailsCardTitleReplace%</h2>
+
+                    <div class="u-align--container-between">
+                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-share u-margin--right-sm"></a>
+                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-chat">Написать продавцу в чат</a>
+                    </div>
+                </header>
+
+                <section class="u-align--container u-box-shadow u-background--white" id="detailsCardDesc">
+                    <div class="c-details-card-img u-bg-images--contain" id="detailsCardImg" style="background-image: url('%detailsCardImgReplace%')">
+                        <ul class="c-nav-slider" id="navSliderResource"></ul>
+                    </div>
+
+                    <div class="c-details-card-desc">
+                        <p class="u-margin-title--sm u-font-size--xxl">%detailsCardDescCostEUReplace%</p>
+                        <p>%detailsCardDescCostBRReplace%</p>
+                        <a href="" class="c-btn c-btn--m c-btn--block c-btn--green u-font-size--l">Купить сейчас</a>
+                        <p class="u-font-color--grey-lighter u-line-height--big">%detailsCardDescDescReplace%</p>
+
+                        <div class="u-margin--top-auto u-padding-top u-align--container-between">
+                            <a href="" class="c-btn c-btn--sm c-btn--border-grey u-margin--top-sm">Возврат и обмен</a>
+                            <a href="" class="c-btn c-btn--sm c-btn--border-grey u-margin--top-sm">Пожаловаться</a>
+                        </div>
+                    </div>
+                </section>
+
+                <ul class="c-nav-img-slider" id="navImgSliderResource"></ul>
+            </section>
 
             <h1 class="u-margin-title--m u-font-size--xxl u-text-align--center u-borders-title">Makarovbox</h1>
 
-            <ul class="c-goods" id="goods"></ul>
+            <ul class="c-goods" id="goods">
+                <li class="c-goods-item u-box-shadow u-display--none" id="goodsItemResource">
+                    <a href="%goodsItemLinkReplace%" data-goods-link class="c-goods-link u-bg-images--contain" style="background-image: url('%goodsItemImg%')">
+                        <span class="c-goods-link-hover">
+                            <span class="c-goods-link-hover-text">Посмотреть и купить</span>
+                        </span>
+                    </a>
+                    <p class="c-goods-sign">%goodsItemNameReplace%
+                        <strong class="u-display--block u-font-weight--bold">%goodsItemCostReplace%</strong>
+                    </p>
+                </li>
+            </ul>
         </article>
 
         <script src="scripts/script.js"></script>
