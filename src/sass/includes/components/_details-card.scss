@@ -2,6 +2,19 @@
 
 }
 
+.c-details-card-header{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: $screen-small) {
+    .c-btn{
+      display: none;
+    }
+  }
+}
+
 .c-details-card-img{
   position: relative;
   width: 66%;
@@ -18,6 +31,8 @@
 }
 
 .c-details-card-desc{
+  display: flex;
+  flex-direction: column;
   width: 34%;
   padding: 20px 30px 30px;
 

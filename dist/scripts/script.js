@@ -12,12 +12,13 @@ var app = (function () {
         ID_DETAILS_CARD_IMG = 'detailsCardImg',
         ID_DETAILS_CARD_TITLE = 'detailsCardTitle',
         ID_DETAILS_CARD_DESC = 'detailsCardDesc',
+        ID_NAV_IMG_SLIDER = 'detailsCardNavImgSlider',
         CLASS_NAME_DETAILS_CARD_CONTENT = 'u-align--container u-box-shadow u-background--white',
-        CLASS_NAME_DETAILS_CARD_TITLE = 'u-margin-title--m u-font-size--3xl',
         CLASS_NAME_NAV_SLIDER = 'c-nav-slider',
         CLASS_NAME_NAV_SLIDER_ITEM = 'c-nav-slider-item',
         CLASS_NAME_NAV_IMG_SLIDER = 'c-nav-img-slider',
         CLASS_NAME_NAV_IMG_SLIDER_ITEM = 'c-nav-img-slider-item u-box-shadow u-bg-images--contain',
+        CLASS_NAME_DETAILS_CARD_HEADER = 'c-details-card-header',
         DATA_ATTR_GOODS_LINK = 'data-goods-link',
         DATA_ATTR_SLIDE = 'data-slide';
 
@@ -103,31 +104,41 @@ var app = (function () {
             })[0];
 
         var detailsCard = document.getElementById(ID_DETAILS_CARD),
+            detailsCardHeader = document.createElement('header'),
             detailsCardTitle = document.createElement('h2'),
             detailsCardContent = document.createElement('section'),
             itemContent =
                 '<div class="c-details-card-img u-bg-images--contain" id=' + ID_DETAILS_CARD_IMG +
-                ' style=\'background-image: url("' + SRC_IMG + detailItem.img2 + '");\'></div>' +
+                ' style=\'background-image: url("' + SRC_IMG + detailItem.img2 + '");\'>' +
+                '</div>' +
                 '<div class="c-details-card-desc">' +
                 '<p class="u-margin-title--sm u-font-size--xxl">' + detailItem.costEU + '</p>' +
                 '<p>' + detailItem.costBR + '</p>' +
-                '<a href="" class="c-btn c-btn--block c-btn--green u-font-size--l">' + DETAILS_CARD_BUTTON_TITLE + '</a>' +
+                '<a href="" class="c-btn c-btn--m c-btn--block c-btn--green u-font-size--l">' + DETAILS_CARD_BUTTON_TITLE + '</a>' +
                 '<p class="u-font-color--grey-lighter u-line-height--big">' + detailItem.desc + '</p>' +
+                '<div class="u-margin--top-auto u-padding-top u-align--container-between">' +
+                '<a href="" class="c-btn c-btn--sm c-btn--border-grey u-margin--top-sm">Возврат и обмен</a>' +
+                '<a href="" class="c-btn c-btn--sm c-btn--border-grey u-margin--top-sm">Пожаловаться</a>' +
+                '</div>' +
                 '</div>';
 
         if (detailsCard.children.length) {
             document.getElementById(ID_DETAILS_CARD_TITLE).innerHTML = detailItem.name;
             document.getElementById(ID_DETAILS_CARD_DESC).innerHTML = itemContent;
         } else {
-            detailsCardTitle.className = CLASS_NAME_DETAILS_CARD_TITLE;
-            detailsCardTitle.id = ID_DETAILS_CARD_TITLE;
-            detailsCardTitle.innerHTML = detailItem.name;
+            detailsCardHeader.className = CLASS_NAME_DETAILS_CARD_HEADER;
+            detailsCardHeader.innerHTML =
+                '<h2 class="u-margin-title--m u-font-size--3xl u-align--center" id="detailsCardTitle">' + detailItem.name + '</h2>' +
+                '<div class="u-align--container-between">' +
+                '<a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-share u-margin--right-sm"></a>' +
+                '<a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-chat">Написать продавцу в чат</a>' +
+                '</div>';
 
             detailsCardContent.className = CLASS_NAME_DETAILS_CARD_CONTENT;
             detailsCardContent.id = ID_DETAILS_CARD_DESC;
             detailsCardContent.innerHTML = itemContent;
 
-            detailsCard.appendChild(detailsCardTitle);
+            detailsCard.appendChild(detailsCardHeader);
             detailsCard.appendChild(detailsCardContent);
         }
 
@@ -138,7 +149,13 @@ var app = (function () {
      * Build slider of images in details card
      * */
     var buildDetailsCardImgSlider = function (detailItem) {
-        var detailsImgArr = detailItem.img3 ? detailItem.img3 : '';
+        var detailsImgArr = detailItem.img3 ? detailItem.img3 : '',
+            navImgSliderPrevious = document.getElementById(ID_NAV_IMG_SLIDER),
+            detailsCard = document.getElementById(ID_DETAILS_CARD);
+
+        if (navImgSliderPrevious) {
+            detailsCard.removeChild(navImgSliderPrevious);
+        }
 
         if (detailsImgArr.length) {
             var navSlider = document.createElement('ul'),
@@ -146,6 +163,7 @@ var app = (function () {
 
             navSlider.className = CLASS_NAME_NAV_SLIDER;
             navImgSlider.className = CLASS_NAME_NAV_IMG_SLIDER;
+            navImgSlider.id = ID_NAV_IMG_SLIDER;
 
             detailsImgArr.forEach(function (item, i) {
                 var navSliderItem = document.createElement('li'),

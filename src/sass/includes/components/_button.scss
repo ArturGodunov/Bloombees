@@ -1,21 +1,54 @@
 .c-btn{
   display: inline-block;
-  font-size: $font-size-l;
-  padding: 12px 0;
-  border-radius: 20px;
   text-align: center;
-  margin: 30px 0;
   transition: .3s;
 
   &.c-btn--green{
     color: $white;
     background: $green;
+
+    &:hover{
+      background: $green-darker;
+    }
   }
+
+  &.c-btn--border-green{
+    border: 2px solid $green;
+    color: $green;
+
+    &:hover{
+      background: $green;
+      color: $white;
+    }
+  }
+
+  &.c-btn--border-grey{
+    border: 2px solid $grey-lightest;
+    color: $grey-lighter;
+
+    &:hover{
+      border-color: $grey-lighter;
+    }
+  }
+
   &.c-btn--block{
     width: 100%;
   }
 
-  &:hover{
-    background: $green-darker;
+  &.c-btn--m{
+    padding: 12px 20px;
+    border-radius: 22px;
+    margin: 30px 0;
+    font-size: $font-size-l;
+
+    &.c-icon-chat{
+      padding-right: 50px;
+    }
+  }
+
+  &.c-btn--sm{
+    padding: 4px 15px;
+    border-radius: 11px;
+    font-size: $font-size-xm;
   }
 }
