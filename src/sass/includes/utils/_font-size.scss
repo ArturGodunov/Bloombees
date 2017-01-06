@@ -1,7 +1,17 @@
-$values: ($font-size-3xl:3xl, $font-size-sm:sm, $font-size-m:m, $font-size-l:l, $font-size-xl:xl, $font-size-xxl:xxl);
+$values: (sm:$font-size-sm, m:$font-size-m, l:$font-size-l, xl:$font-size-xl, xxl:$font-size-xxl, 3xl:$font-size-3xl);
 
 @each $key, $i in $values {
-  .u-font-size--#{$i}{
-    font-size: $key;
+  .u-font-size--#{$key}{
+    font-size: $i;
+  }
+}
+
+@media (max-width: $screen-tablet) {
+  $values: (xxl:$font-size-xl, 3xl:$font-size-xl);
+
+  @each $key, $i in $values {
+    .u-font-size--#{$key}{
+      font-size: $i;
+    }
   }
 }

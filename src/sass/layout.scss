@@ -9,12 +9,6 @@
 @import "includes/settings/vars";
 
 /**
- * Tools
- */
-@import "includes/tools/mixins";
-@import "includes/tools/animations";
-
-/**
  * Base
  */
 @import "includes/base/fonts";
@@ -48,4 +42,5 @@
 @import "includes/utils/borders-title";
 @import "includes/utils/margin";
 @import "includes/utils/padding";
+@import "includes/utils/animation";
 

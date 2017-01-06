@@ -9,21 +9,21 @@
     <body>
         <article class="c-wrapper">
             <section class="c-details-card u-display--none" id="detailsCardResource">
-                <header class="c-details-card-header">
+                <header class="c-details-card--header">
                     <h2 class="u-margin-title--m u-font-size--3xl u-align--center" id="detailsCardTitle">%detailsCardTitleReplace%</h2>
 
                     <div class="u-align--container-between">
-                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-share u-margin--right-sm"></a>
-                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon-chat">Написать продавцу в чат</a>
+                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon--share u-margin--right-sm"></a>
+                        <a href="" class="c-btn c-btn--m c-btn--border-green c-icon c-icon--chat">Написать продавцу в чат</a>
                     </div>
                 </header>
 
                 <section class="u-align--container u-box-shadow u-background--white" id="detailsCardDesc">
-                    <div class="c-details-card-img u-bg-images--contain" id="detailsCardImg" style="background-image: url('%detailsCardImgReplace%')">
+                    <div class="c-details-card--img u-bg-images--contain u-animation--fade-in" id="detailsCardImg" style="background-image: url('%detailsCardImgReplace%')">
                         <ul class="c-nav-slider" id="navSliderResource"></ul>
                     </div>
 
-                    <div class="c-details-card-desc">
+                    <div class="c-details-card--desc">
                         <p class="u-margin-title--sm u-font-size--xxl">%detailsCardDescCostEUReplace%</p>
                         <p>%detailsCardDescCostBRReplace%</p>
                         <a href="" class="c-btn c-btn--m c-btn--block c-btn--green u-font-size--l">Купить сейчас</a>
@@ -42,13 +42,14 @@
             <h1 class="u-margin-title--m u-font-size--xxl u-text-align--center u-borders-title">Makarovbox</h1>
 
             <ul class="c-goods" id="goods">
-                <li class="c-goods-item u-box-shadow u-display--none" id="goodsItemResource">
-                    <a href="%goodsItemLinkReplace%" data-goods-link class="c-goods-link u-bg-images--contain" style="background-image: url('%goodsItemImg%')">
-                        <span class="c-goods-link-hover">
-                            <span class="c-goods-link-hover-text">Посмотреть и купить</span>
+                <li class="c-goods--item u-box-shadow u-display--none" id="goodsItemResource">
+                    <a href="%goodsItemLinkReplace%" data-goods-link data-goods-img="%goodsItemLinkReplace%" class="c-goods--link u-bg-images--contain">
+                        <span class="c-goods--link-hover">
+                            <span class="c-goods--link-hover-text">Посмотреть и купить</span>
                         </span>
                     </a>
-                    <p class="c-goods-sign">%goodsItemNameReplace%
+                    <p class="c-goods--sign u-align--item u-align--column-between">
+                        <span>%goodsItemNameReplace%</span>
                         <strong class="u-display--block u-font-weight--bold">%goodsItemCostReplace%</strong>
                     </p>
                 </li>

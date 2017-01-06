@@ -15,15 +15,16 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: -135px;
+    left: calc(50% - 25vw);
     transform: translateY(-50%);
-    width: calc(100% + 270px);
+    width: calc(50vw);
     border-top: 1px solid $grey-lightest;
   }
   &:after{
     top: 0;
     left: -10px;
     width: calc(100% + 20px);
+    max-width: calc(100vw - 20px);
     height: 100%;
     background: $grey;
   }

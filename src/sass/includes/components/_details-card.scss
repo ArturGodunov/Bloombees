@@ -2,7 +2,7 @@
 
 }
 
-.c-details-card-header{
+.c-details-card--header{
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -15,7 +15,7 @@
   }
 }
 
-.c-details-card-img{
+.c-details-card--img{
   position: relative;
   width: 66%;
   padding-top: 66%;
@@ -30,7 +30,7 @@
   }
 }
 
-.c-details-card-desc{
+.c-details-card--desc{
   display: flex;
   flex-direction: column;
   width: 34%;

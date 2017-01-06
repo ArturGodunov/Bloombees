@@ -4,7 +4,7 @@
   margin: 0 #{-$gutter/2};
 }
 
-.c-goods-item{
+.c-goods--item{
   display: flex;
   flex-direction: column;
   width: calc(25% - #{$gutter});
@@ -21,12 +21,14 @@
   }
 }
 
-.c-goods-link{
+.c-goods--link{
   padding-top: 100%;
   position: relative;
+  border-radius: 3px 3px 0 0;
+  background-image: url($loader);
 }
 
-.c-goods-link-hover{
+.c-goods--link-hover{
   position: absolute;
   top: 0;
   left: 0;
@@ -35,12 +37,14 @@
   border-radius: $border-radius $border-radius 0 0;
   opacity: 0.8;
 
-  .c-goods-item:hover & {
-    background: $black;
+  @media (min-width: $screen-small + 1) {
+    .c-goods--item:hover & {
+      background: $black;
+    }
   }
 }
 
-.c-goods-link-hover-text{
+.c-goods--link-hover-text{
   display: none;
   position: absolute;
   top: 50%;
@@ -53,18 +57,22 @@
   font-size: $font-size-m;
   text-align: center;
 
-  .c-goods-item:hover & {
-    display: inline-block;
+  @media (min-width: $screen-small + 1) {
+    .c-goods--item:hover & {
+      display: inline-block;
+    }
   }
 
-  &:hover{
-    background: $white;
-    color: $grey-darker;
-    border: none;
+  @media (min-width: $screen-small + 1) {
+    &:hover {
+      background: $white;
+      color: $grey-darker;
+      border: none;
+    }
   }
 }
 
-.c-goods-sign{
+.c-goods--sign{
   padding: 10px 10px 5px;
   line-height: 1.5;
 }

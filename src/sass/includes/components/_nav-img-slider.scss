@@ -2,19 +2,24 @@
   display: flex;
 }
 
-.c-nav-img-slider-item{
+.c-nav-img-slider--item{
   width: 94px;
   height: 94px;
   margin-top: 15px;
   border-radius: $border-radius;
   cursor: pointer;
-  transition: .3s;
+  transition: opacity .3s;
 
-  & + .c-nav-img-slider-item{
+  & + .c-nav-img-slider--item{
     margin-left: 15px;
   }
 
-  &:hover,
+  @media (min-width: $screen-small + 1) {
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+
   &.active{
     opacity: 0.6;
   }

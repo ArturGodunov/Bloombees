@@ -1,7 +1,7 @@
-$values: ($grey:grey, $grey-lighter:grey-lighter, $grey-darker:grey-darker);
+$values: (grey:$grey, grey-lighter:$grey-lighter, grey-darker:$grey-darker);
 
 @each $key, $i in $values {
-  .u-font-color--#{$i}{
-    color: $key;
+  .u-font-color--#{$key}{
+    color: $i;
   }
 }

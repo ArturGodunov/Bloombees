@@ -7,8 +7,10 @@
     color: $white;
     background: $green;
 
-    &:hover{
-      background: $green-darker;
+    @media (min-width: $screen-small + 1) {
+      &:hover{
+        background: $green-darker;
+      }
     }
   }
 
@@ -16,9 +18,11 @@
     border: 2px solid $green;
     color: $green;
 
-    &:hover{
-      background: $green;
-      color: $white;
+    @media (min-width: $screen-small + 1) {
+      &:hover {
+        background: $green;
+        color: $white;
+      }
     }
   }
 
@@ -26,8 +30,10 @@
     border: 2px solid $grey-lightest;
     color: $grey-lighter;
 
-    &:hover{
-      border-color: $grey-lighter;
+    @media (min-width: $screen-small + 1) {
+      &:hover {
+        border-color: $grey-lighter;
+      }
     }
   }
 
@@ -41,7 +47,7 @@
     margin: 30px 0;
     font-size: $font-size-l;
 
-    &.c-icon-chat{
+    &.c-icon--chat{
       padding-right: 50px;
     }
   }

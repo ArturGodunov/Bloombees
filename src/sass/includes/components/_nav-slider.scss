@@ -6,7 +6,7 @@
   display: flex;
 }
 
-.c-nav-slider-item{
+.c-nav-slider--item{
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -15,9 +15,19 @@
   transition: .3s;
   cursor: pointer;
 
-  &:hover,
+  @media (min-width: $screen-small + 1) {
+    &:hover{
+      background: $grey-darker;
+      box-shadow: 0 0 0 2px $grey-darker;
+    }
+  }
+
   &.active{
     background: $grey-darker;
     box-shadow: 0 0 0 2px $grey-darker;
+  }
+
+  @media (max-width: $screen-small) {
+    margin: 0 8px;
   }
 }

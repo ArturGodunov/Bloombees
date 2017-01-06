@@ -1,0 +1,8 @@
+.u-animation--fade-in{
+  animation: .4s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
