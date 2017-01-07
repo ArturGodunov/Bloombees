@@ -47,11 +47,36 @@ var app = (function () {
      * */
     var buildGoods = function (data, startIndexItem, countItems) {
         var goods = document.getElementById('goods'),
-            dataLength = data.length;
+            hash = window.location.hash,
+            id = hash.replace('#', '');
 
-        if (startIndexItem >= dataLength) {
+        if (startIndexItem >= data.length) {
             window.removeEventListener('wheel', lazyLoadLoader);
             window.removeEventListener('touchend', lazyLoadLoader);
+        }
+
+        if (id) {
+            var detailItem = data.filter(function (item) {
+                return item.Product_id === id;
+            })[0];
+
+            ajaxGet(URL_DATA_PICTURES + detailItem.Product_storeId + '/' + id, function (response) {
+                var images = JSON.parse(response).data;
+
+                data.forEach(function (item) {
+                    if (item.Product_id === id) {
+                        item.Product_pictures = images.map(function (subitem) {
+                            return subitem.Picture_sourceUrl;
+                        });
+                    }
+                });
+
+                var image = new Image();
+                image.addEventListener('load', function () {
+                    buildDetailsCard(hash);
+                });
+                image.src = images[0].Picture_sourceUrl;
+            });
         }
 
         data.forEach(function (item, i) {
@@ -62,8 +87,8 @@ var app = (function () {
                 ajaxGet(URL_DATA_PICTURES + item.Product_storeId + '/' + item.Product_id, function (response) {
                     var images = JSON.parse(response).data;
 
-                    images.forEach(function (subitem) {
-                        item.Product_pictures.push(subitem.Picture_sourceUrl);
+                    item.Product_pictures = images.map(function (subitem) {
+                        return subitem.Picture_sourceUrl;
                     });
 
                     newGoodsItem.className = 'c-goods--item u-box-shadow u-animation--fade-in';
