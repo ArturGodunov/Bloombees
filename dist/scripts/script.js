@@ -220,38 +220,94 @@ var app = (function () {
      * Change slider item
      * */
     var onChangeSliderItem = function (detailItem) {
-        var detailsCard = document.getElementById('detailsCard');
+        var detailsImages = detailItem.Product_pictures ? detailItem.Product_pictures : '';
 
-        detailsCard.addEventListener('click', function (event) {
-            event.preventDefault();
-            var target = event.target;
+        if (detailsImages.length > 1) {
+            var detailsCard = document.getElementById('detailsCard');
 
-            while (!target.hasAttribute('data-slide') || target !== detailsCard) {
-                if (target.hasAttribute('data-slide')) {
-                    var slideNumber = +target.getAttribute('data-slide'),
-                        detailsCardImg = document.getElementById('detailsCardImg');
+            detailsCard.addEventListener('click', function (event) {
+                event.preventDefault();
+                var target = event.target;
 
-                    detailsCardImg.style.backgroundImage = 'url("' + detailItem.Product_pictures[slideNumber] + '")';
+                while (!target.hasAttribute('data-slide') || target !== detailsCard) {
+                    if (target.hasAttribute('data-slide')) {
+                        var slideNumber = +target.getAttribute('data-slide'),
+                            detailsCardImg = document.getElementById('detailsCardImg');
 
-                    var navSliderAll = document.querySelectorAll('[data-slide]');
-                    Array.prototype.forEach.call(navSliderAll, function (item) {
-                        var itemNumber = +item.getAttribute('data-slide');
+                        detailsCardImg.style.backgroundImage = 'url("' + detailItem.Product_pictures[slideNumber] + '")';
 
-                        if (itemNumber !== slideNumber) {
-                            item.classList.remove('active');
-                        } else {
-                            item.classList.add('active');
-                        }
-                    });
+                        var navSliderAll = document.querySelectorAll('[data-slide]');
+                        Array.prototype.forEach.call(navSliderAll, function (item) {
+                            var itemNumber = +item.getAttribute('data-slide');
 
-                    return;
-                } else {
-                    if (target.tagName !== 'BODY') {
-                        target = target.parentNode;
-                    } else {
+                            if (itemNumber !== slideNumber) {
+                                item.classList.remove('active');
+                            } else {
+                                item.classList.add('active');
+                            }
+                        });
+
                         return;
+                    } else {
+                        if (target.tagName !== 'BODY') {
+                            target = target.parentNode;
+                        } else {
+                            return;
+                        }
                     }
                 }
+            });
+
+            onSwipe(detailItem);
+        }
+    };
+
+    /**
+     * Swipe
+     * */
+    var onSwipe = function (detailItem) {
+        var initialPoint,
+            finalPoint,
+            detailsCardImg = document.getElementById('detailsCardImg');
+
+        detailsCardImg.addEventListener('touchstart', function(event) {
+            // event.preventDefault();
+            // event.stopPropagation();
+            initialPoint = event.changedTouches[0];
+        });
+
+        detailsCardImg.addEventListener('touchend', function(event) {
+            // event.preventDefault();
+            // event.stopPropagation();
+            finalPoint = event.changedTouches[0];
+
+            var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+
+            if (xAbs > 20) {
+                var slideNumberActive = +document.querySelector('[data-slide].active').getAttribute('data-slide'),
+                    slideNumberLast = +document.querySelector('[data-slide]:last-child').getAttribute('data-slide'),
+                    detailsCardImg = document.getElementById('detailsCardImg'),
+                    navSliderAll = document.querySelectorAll('[data-slide]');
+
+                if (finalPoint.pageX < initialPoint.pageX){
+                    /** Swipe to the left */
+                    slideNumberActive += slideNumberActive !== slideNumberLast ? 1 : 0;
+                } else{
+                    /** Swipe to the right */
+                    slideNumberActive -= slideNumberActive !== 0 ? 1 : 0;
+                }
+
+                detailsCardImg.style.backgroundImage = 'url("' + detailItem.Product_pictures[slideNumberActive] + '")';
+
+                Array.prototype.forEach.call(navSliderAll, function (item) {
+                    var itemNumber = +item.getAttribute('data-slide');
+
+                    if (itemNumber !== slideNumberActive) {
+                        item.classList.remove('active');
+                    } else {
+                        item.classList.add('active');
+                    }
+                });
             }
         });
     };
