@@ -9,6 +9,12 @@ var app = (function () {
             'Authorization': 'Basic cnN0eWxlbGFiOlJzdHlCbG87bTM5'
         },
         FILE_NAME_LOADER = 'loader.svg',
+        SCREEN_WIDTH_TABLET = 768,
+        SCREEN_WIDTH_PHONE = 480,
+        START_COUNT_GOODS_ITEMS_DESKTOP = 12,
+        START_COUNT_GOODS_ITEMS_TABLET = 8,
+        START_COUNT_GOODS_ITEMS_PHONE = 4,
+        STEP_LAZY_LOAD_GOODS_ITEMS = 4,
         SRC_IMG = 'images/',
         URL_DATA = 'https://bloombees.com/h/api/manage/',
         URL_DATA_PRODUCTS = URL_DATA + 'products/',
@@ -25,12 +31,12 @@ var app = (function () {
      * */
     var saveDataProducts = function (response) {
         var documentWidth = document.documentElement.clientWidth,
-            countItems = 12;
+            countItems = START_COUNT_GOODS_ITEMS_DESKTOP;
 
-        if (documentWidth >= 480 && documentWidth < 768) {
-            countItems = 8;
-        } else if (documentWidth < 480) {
-            countItems = 4;
+        if (documentWidth >= SCREEN_WIDTH_PHONE && documentWidth < SCREEN_WIDTH_TABLET) {
+            countItems = START_COUNT_GOODS_ITEMS_TABLET;
+        } else if (documentWidth < SCREEN_WIDTH_PHONE) {
+            countItems = START_COUNT_GOODS_ITEMS_PHONE;
         }
 
         store = JSON.parse(response).data;
@@ -50,11 +56,17 @@ var app = (function () {
             hash = window.location.hash,
             id = hash.replace('#', '');
 
+        /**
+         * Remove lazy load handlers
+         * */
         if (startIndexItem >= data.length) {
             window.removeEventListener('wheel', lazyLoadLoader);
             window.removeEventListener('touchend', lazyLoadLoader);
         }
 
+        /**
+         * Build details card when linking
+         * */
         if (id) {
             var detailItem = data.filter(function (item) {
                 return item.Product_id === id;
@@ -79,6 +91,9 @@ var app = (function () {
             });
         }
 
+        /**
+         * Build goods items
+         * */
         data.forEach(function (item, i) {
             if (i >= startIndexItem && i < startIndexItem + countItems) {
                 var goodsItemResourceInnerHTML = document.getElementById('goodsItemResource').innerHTML,
@@ -204,7 +219,7 @@ var app = (function () {
             lastGoodsItemBottom = lastGoodsItem.getBoundingClientRect().bottom;
 
         if (lastGoodsItemBottom < documentHeight) {
-            buildGoods(store, lastIndexGoodsItem, 4);
+            buildGoods(store, lastIndexGoodsItem, STEP_LAZY_LOAD_GOODS_ITEMS);
         }
     };
 
